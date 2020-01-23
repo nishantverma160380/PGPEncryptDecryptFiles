@@ -12,7 +12,14 @@ public interface PGPManager {
 	public void encryptFile(String originalFile, FileInputStream keyFile, FileOutputStream encryptFile,
 			boolean asciiArmored, boolean integrityCheck) throws NoSuchProviderException, IOException, PGPException;
 
-	public void decryptFile(FileInputStream encryptFile, FileOutputStream dencryptFile, FileInputStream keyFile, String passphrase)
+	/*
+	 * public void decryptFile(FileInputStream encryptFile, FileOutputStream
+	 * dencryptFile, FileInputStream keyFile, String passphrase) throws
+	 * NoSuchProviderException, IOException, PGPException;
+	 */
+
+	public void decryptFile(FileInputStream fileInputStream, FileOutputStream fileOutputStream,
+			FileInputStream fileInputStream2, String passphrase, FileInputStream fileOutputStream2)
 			throws NoSuchProviderException, IOException, PGPException;
 
 }

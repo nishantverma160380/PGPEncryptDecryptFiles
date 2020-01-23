@@ -30,18 +30,32 @@ public class PGPManagerImpl implements PGPManager {
 
 	}
 
+	/*
+	 * @Override public void decryptFile(FileInputStream encryptFile,
+	 * FileOutputStream decryptFile, FileInputStream keyFile, String passphrase)
+	 * throws NoSuchProviderException, IOException, PGPException {
+	 * 
+	 * logger.debug("decryptFile()");
+	 * 
+	 * PGPUtils.decryptFile(encryptFile, decryptFile, keyFile,
+	 * passphrase.toCharArray());
+	 * 
+	 * encryptFile.close(); decryptFile.close(); keyFile.close();
+	 * 
+	 * }
+	 */
+
 	@Override
 	public void decryptFile(FileInputStream encryptFile, FileOutputStream decryptFile, FileInputStream keyFile,
-			String passphrase) throws NoSuchProviderException, IOException, PGPException {
-
+			String passphrase, FileInputStream signedKey) throws NoSuchProviderException, IOException, PGPException {
 		logger.debug("decryptFile()");
 
-		PGPUtils.decryptFile(encryptFile, decryptFile, keyFile, passphrase.toCharArray());
+		PGPUtils.decryptFile(encryptFile, decryptFile, keyFile, passphrase.toCharArray(), signedKey);
 
 		encryptFile.close();
 		decryptFile.close();
+		signedKey.close();
 		keyFile.close();
-
 	}
 
 }

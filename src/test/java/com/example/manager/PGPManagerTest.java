@@ -75,7 +75,8 @@ public class PGPManagerTest {
 
 		pgpManager.decryptFile(new FileInputStream(filesConfigProperties.getEncryptFilePath()),
 				new FileOutputStream(filesConfigProperties.getDecryptFilePath()),
-				new FileInputStream(pgpConfigProperties.getSecretKeyFilePath()), pgpConfigProperties.getPassphrase());
+				new FileInputStream(pgpConfigProperties.getSecretKeyFilePath()), pgpConfigProperties.getPassphrase(),
+				new FileInputStream(pgpConfigProperties.getCpublicKeyFilePath()));
 
 		assertEquals((new File(filesConfigProperties.getDecryptFilePath())).exists(), true);
 

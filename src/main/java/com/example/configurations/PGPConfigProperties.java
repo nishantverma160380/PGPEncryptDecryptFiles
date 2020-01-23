@@ -14,6 +14,12 @@ public class PGPConfigProperties {
 	@Value("${pgp.secretKeyFile}")
 	private String secretKeyFilePath;
 
+	@Value("${pgp.cpublicKeyFile}")
+	private String cpublicKeyFilePath;
+
+	@Value("${pgp.csecretKeyFile}")
+	private String csecretKeyFilePath;
+	
 	@Value("${pgp.passphrase}")
 	private String passphrase;
 
@@ -59,6 +65,22 @@ public class PGPConfigProperties {
 
 	public void setIntegrityCheck(boolean integrityCheck) {
 		this.integrityCheck = integrityCheck;
+	}
+
+	public String getCpublicKeyFilePath() {
+		return cpublicKeyFilePath;
+	}
+
+	public void setCpublicKeyFilePath(String cpublicKeyFilePath) {
+		this.cpublicKeyFilePath = cpublicKeyFilePath;
+	}
+
+	public String getCsecretKeyFilePath() {
+		return csecretKeyFilePath;
+	}
+
+	public void setCsecretKeyFilePath(String csecretKeyFilePath) {
+		this.csecretKeyFilePath = csecretKeyFilePath;
 	}
 
 	@Override

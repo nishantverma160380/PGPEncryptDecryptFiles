@@ -1,1 +1,0 @@
-Test encrypt and decrypt file using Bouncy Castle library v1.4.6.
